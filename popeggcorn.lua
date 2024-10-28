@@ -21,9 +21,8 @@ minetest.register_node(modname .. ":cornplank", {
 })
 ------------------------------------------------------------------------
 -- This allows eggcorns to be used in a cook recipe while still allowing you to 'burn the popcorn'
-minetest.override_item("nc_tree:eggcorn",
-	{groups = {flammable = 20}}
-)
+core.registered_items["nc_tree:eggcorn"].groups.flammable = 20
+
 ------------------------------------------------------------------------
 local function findheat(pos)
 	return nodecore.find_nodes_around(pos, "group:damage_radiant")
